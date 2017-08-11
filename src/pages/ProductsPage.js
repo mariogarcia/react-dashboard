@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-//import {emit} from "../Bus";
 
 const ProductsPage = ({name, onClick}) => {
     return (
@@ -11,28 +10,6 @@ const ProductsPage = ({name, onClick}) => {
     );
 }
 
-// el segundo parametro puede ser opcional
-//const mapStateToProps = (state, ownProps) => {
-//    return {
-//        name: "john"
-//    }
-//}
-//
-//const mapDispatchToProps = (dispatch, ownProps) => {
-//    return {
-//        onClick: () => {
-//            console.log("FUCKING YEAH!!!!");
-//        }
-//    }
-//}
-
-//export default connect(
-//    mapStateToProps,
-//    mapDispatchToProps
-//)(ProductsPage);
-
-
-// redux-observable vs dispatch
 export default connect(
     (state) => ({
         name: "john"
@@ -40,7 +17,6 @@ export default connect(
     (dispatch) => ({
         onClick: () => {
             console.log("FUCKING YEAH!!!!");
-            //dispatch(new FetchAllDataAction(ownProps.projectId));
         }
     })
 )(ProductsPage);

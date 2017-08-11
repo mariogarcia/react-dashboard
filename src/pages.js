@@ -1,4 +1,9 @@
+import ProductsPage from './pages/ProductsPage';
+import DashboardPage from './pages/DashboardPage';
+import LoginPage from './pages/LoginPage';
 
-export { DashboardPage } from './pages/DashboardPage';
-export { LoginPage} from './pages/LoginPage';
-export { ProductsPage } from './pages/ProductsPage';
+export default {
+    DashboardPage,
+    ProductsPage,
+    LoginPage
+};

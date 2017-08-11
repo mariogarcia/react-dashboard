@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { LoginForm } from '../components';
 
-export default class LoginPage extends Component {
+export default class Login extends Component {
     constructor() {
         super();
         this.state = {

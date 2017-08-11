@@ -1,9 +1,9 @@
-import ProductsPage from './pages/ProductsPage';
-import DashboardPage from './pages/DashboardPage';
-import LoginPage from './pages/LoginPage';
+import Products from './containers/Products';
+import Dashboard from './containers/Dashboard';
+import Login from './containers/Login';
 
 export default {
-    DashboardPage,
-    ProductsPage,
-    LoginPage
+    Dashboard,
+    Products,
+    Login
 };

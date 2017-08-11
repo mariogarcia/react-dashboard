@@ -15,9 +15,9 @@ class App extends React.Component {
                   <div className="container-fluid central">
                       <div className="row">
                           <SideBar/>
-                          <Route exact path="/" component={pages.DashboardPage}/>
-                          <Route exact path="/login" component={pages.LoginPage}/>
-                          <Route exact path="/products" component={pages.ProductsPage}/>
+                          <Route exact path="/" component={pages.Dashboard}/>
+                          <Route exact path="/login" component={pages.Login}/>
+                          <Route exact path="/products" component={pages.Products}/>
                       </div>
                   </div>
               </div>

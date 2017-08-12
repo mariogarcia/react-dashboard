@@ -11,6 +11,16 @@ import { Results,
          ResultRows,
          RowsSelection } from '../components/results';
 
+
+const STOPPED_CONTAINERS = [
+    {
+        id: '62a64ab78fd1',
+        image: 'mgg/nvm-dev',
+        created: '9 hours ago',
+        status: 'Up 9 hours',
+        names: 'nervous_hoover'
+    }]
+
 const FAKE_CONTAINERS = [
     {
         id: '62a64ab78fd1',
@@ -83,29 +93,45 @@ const ContainerRow = ({key, row}) => {
     );
 }
 
-export const ContainerTable = ({results}) => {
-    return (
-    <Results>
-        <ActionsRow>
-            <RowsSelection/>
-            <Button bsStyle="danger"
-                    key="default3" id="split-button-basic-default">
-                <span className="glyphicon glyphicon-stop"></span> Stop
-            </Button>
-            <Button bsStyle="success"
-                    key="default3" id="split-button-basic-default">
-                <span className="glyphicon glyphicon-play"></span> Restart
-            </Button>
-         </ActionsRow>
-         <NavRow>
-            <Nav bsStyle="tabs" activeKey={1}>
-                <NavItem eventKey={1}>Running</NavItem>
-                <NavItem eventKey={2}>Stopped</NavItem>
-            </Nav>
-        </NavRow>
-        <ResultRows list={results} rowComponent={ContainerRow}/>
-    </Results>
-    );
+export class ContainerTable extends React.Component {
+    constructor(props) {
+        super();
+        this.state = {
+            activeKey: 1,
+            results: props.results
+        }
+
+        this.handleOnSelect = this.handleOnSelect.bind(this);
+    }
+
+    handleOnSelect(eventKey) {
+        this.setState({activeKey: eventKey, results: STOPPED_CONTAINERS});
+    }
+
+    render() {
+        return (
+            <Results>
+                <ActionsRow>
+                    <RowsSelection />
+                    <Button bsStyle="danger"
+                            key="default3" id="split-button-basic-default">
+                        <span className="glyphicon glyphicon-stop"></span> Stop
+                    </Button>
+                    <Button bsStyle="success"
+                            key="default3" id="split-button-basic-default">
+                        <span className="glyphicon glyphicon-play"></span> Restart
+                    </Button>
+                 </ActionsRow>
+                 <NavRow>
+                    <Nav bsStyle="tabs" activeKey={this.state.activeKey} onSelect={this.handleOnSelect}>
+                        <NavItem eventKey={1}>Running</NavItem>
+                        <NavItem eventKey={2}>Stopped</NavItem>
+                    </Nav>
+                </NavRow>
+                <ResultRows list={this.state.results} rowComponent={ContainerRow}/>
+            </Results>
+        );
+    }
 }
 
 const Containers = ({name, onClick}) => {

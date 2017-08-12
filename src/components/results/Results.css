@@ -1,0 +1,11 @@
+table thead th { text-align: center; }
+.table tbody tr td { vertical-align: middle; }
+
+.checkbox { margin: 0px; padding: 0px; vertical-align: bottom; text-align: center;}
+.checkbox label { margin: 0px; }
+
+.top-buffer { margin-top: 20px; }
+
+.blocks { margin: 0px 0px 0px 10px; }
+
+.row-margin-bottom { margin-bottom: 20px; }

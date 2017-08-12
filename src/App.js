@@ -17,7 +17,8 @@ class App extends React.Component {
                           <SideBar/>
                           <Route exact path="/" component={pages.Dashboard}/>
                           <Route exact path="/login" component={pages.Login}/>
-                          <Route exact path="/products" component={pages.Products}/>
+              <Route exact path="/images" component={pages.Images}/>
+<Route exact path="/containers" component={pages.Containers}/>
                       </div>
                   </div>
               </div>

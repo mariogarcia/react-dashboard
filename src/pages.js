@@ -1,9 +1,11 @@
-import Products from './containers/Products';
+import Images from './containers/Images';
 import Dashboard from './containers/Dashboard';
 import Login from './containers/Login';
+import Containers from './containers/Containers';
 
 export default {
     Dashboard,
-    Products,
-    Login
+    Images,
+    Login,
+    Containers
 };
